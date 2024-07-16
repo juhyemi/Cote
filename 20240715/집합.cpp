@@ -8,7 +8,7 @@ string command;
 bool number[MAX];
 
 int main() {
-	ios_base::sync_with_stdio(0);  cin.tie(0);  cout.tie(0);
+  ios_base::sync_with_stdio(0);  cin.tie(0);  cout.tie(0);
 
   cin >> M;
 	while(M--) {
@@ -35,3 +35,4 @@ int main() {
 
 // 시간복잡도: O(M)
 // 공간복잡도: O(MAX)
+// https://resilient-aura-65d.notion.site/11723-4476880fd7a34229966ac2757a8fd8ee?pvs=4
