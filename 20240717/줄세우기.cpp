@@ -37,3 +37,4 @@ int main() {
 
 // 시간복잡도: O(n^2) * P
 // 공간복잡도: O(MAX)
+// https://resilient-aura-65d.notion.site/aaef673008e5473381a88d7da0a10952?pvs=4
