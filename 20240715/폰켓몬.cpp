@@ -18,3 +18,5 @@ int solution(vector<int> nums) {
     
     return min(type, (int)nums.size() / 2);
 }
+
+// https://resilient-aura-65d.notion.site/ebdbae5c5c8f4821906ded147fdabae3?pvs=4
