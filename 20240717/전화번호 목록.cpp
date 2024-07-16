@@ -12,3 +12,5 @@ bool solution(vector<string> phone_book) {
     
     return true;
 }
+
+// https://resilient-aura-65d.notion.site/65e64723aed84210abdac0b2bff07111?pvs=4
