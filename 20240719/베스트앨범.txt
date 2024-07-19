@@ -1,0 +1,66 @@
+import java.util.*;
+class Solution {
+    public int[] solution(String[] genres, int[] plays) {
+        HashMap<String, Integer> map = new HashMap<>();
+        for(int i=0; i<genres.length; i++){
+            map.put(genres[i], map.getOrDefault(genres[i],0)+plays[i]);
+        }
+        List<String> keySet = new ArrayList<>(map.keySet());
+        
+        keySet.sort(new Comparator<String>(){
+            @Override
+            public int compare(String o1, String o2){
+                return map.get(o2).compareTo(map.get(o1));
+            }
+        });//value기준 오름차순
+        List<List<Music>> playList = new ArrayList<>();
+        // 장르별 각 재생횟수
+        for(int i=0; i<map.size(); i++){
+            playList.add(new ArrayList<Music>());
+        }
+        int k = -1;
+        for(String gen:keySet){
+            k++;
+            for(int i=0; i<genres.length; i++){
+                if(gen.equals(genres[i])){
+                    playList.get(k).add(new Music(plays[i], i));
+                }
+            }
+        }
+        for(int i=0; i<playList.size(); i++){
+            Collections.sort(playList.get(i), new Comparator<Music>(){
+                @Override
+                public int compare(Music m1, Music m2){
+                    int compareByPlay = Integer.compare(m2.play, m1.play);
+                    if(compareByPlay!=0) return compareByPlay;
+                    
+                    return Integer.compare(m1.idx, m2.idx);
+                }
+            });
+        }
+        
+        List<Integer> ls = new ArrayList<>();
+        for(int i=0; i<playList.size(); i++){
+            if(playList.get(i).size()>=2){
+                ls.add(playList.get(i).get(0).idx);
+                ls.add(playList.get(i).get(1).idx);
+            }else if(playList.get(i).size()==1){
+                ls.add(playList.get(i).get(0).idx);
+            }
+        }
+        int[] answer = new int[ls.size()];
+        for(int i=0; i<ls.size(); i++){
+            answer[i] = ls.get(i);
+        }
+        
+        return answer;
+    }
+}
+class Music{
+    int play;
+    int idx;
+    Music(int play, int idx){
+        this.play = play;
+        this.idx = idx;
+    }
+}
