@@ -1,0 +1,20 @@
+import java.util.*;
+public class Solution {
+    public int[] solution(int []arr) {
+        Queue<Integer> q = new LinkedList<>();
+        int n = -1;
+        for(int i=0; i<arr.length; i++){
+            if(n!=arr[i]){
+                q.add(arr[i]);
+                n=arr[i];
+            }
+        }
+        int[] answer = new int[q.size()];
+        int i=0;
+        while(!q.isEmpty()){
+            answer[i] = q.poll();
+            i++;
+        }
+        return answer;
+    }
+}
