@@ -1,0 +1,35 @@
+import java.util.*;
+class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+        Queue<Integer> q = new LinkedList<>();
+        List<Integer> result = new ArrayList<>();
+        for(int i=0; i<progresses.length; i++){
+            int k1 = (100-progresses[i])/speeds[i]; // 몫
+            int k = (100-progresses[i])%speeds[i]; // 나머지
+            if(k == 0){ // 나머지가 없으면 몫만큼의 일수가 걸림
+               q.add(k1);
+            }else{
+                q.add(k1+1); // 나머지 있으면 몫에 +1한 기간만큼 걸림
+            }
+        }
+        // a는 걸리는 일 수가 계산되어 있는 배열
+        int k = q.poll();
+        int count = 1;
+        while(!q.isEmpty()){
+                int k1 = q.poll();
+                if(k>=k1){
+                    count ++;
+                }else{
+                    result.add(count);
+                    count = 1;
+                    k = k1;
+                }
+        }
+        result.add(count);
+        int[] answer = new int[result.size()];
+        for(int j=0; j<result.size(); j++){
+            answer[j] = result.get(j);
+        }
+        return answer;
+    }
+}
