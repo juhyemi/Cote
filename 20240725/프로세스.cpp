@@ -45,4 +45,5 @@ int solution(vector<int> priorities, int location) {
     return answer;
 }
 
+// 참고: https://velog.io/@dlgpfla8181/프로그래머스-프로세스c
 // https://resilient-aura-65d.notion.site/a4c5f0aa6a074872949975ede555fefe?pvs=4
