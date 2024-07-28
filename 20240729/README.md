@@ -6,31 +6,28 @@
   [은상]
   <br/>
   [주혜]
- <br/>
+
 - 문제점<br/>
   [은상]
   <br/>
   [주혜]
-  <br/>
+
 - 피드백<br/>
   [은상]
   <br/>
   [주혜]
-  <br/>
+
 ### 프로그래머스 [디스크 컨트롤러](https://school.programmers.co.kr/learn/courses/30/lessons/42627)
 
 - 접근방식<br/>
   [은상]
   <br/>
   [주혜]
- <br/>
 - 문제점<br/>
   [은상]
   <br/>
   [주혜]
-  <br/>
 - 피드백<br/>
   [은상]
   <br/>
   [주혜]
-  <br/>
