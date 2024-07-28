@@ -1,4 +1,3 @@
-//어두운 굴다리
 import java.util.*;
 import java.io.*;
 public class Q17266 {
