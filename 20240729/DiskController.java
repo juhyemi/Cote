@@ -9,7 +9,7 @@ class DiskController {
                 return o1[0]-o2[0];
             }
         });
-        //작업이 수행되지 않을 때는 요청시간 순으로 들어와야하기 때문에 요청시간 순으로 정렬
+        //요청시간, 수행시간 순 정렬
         PriorityQueue<int[]> pq = new PriorityQueue<>((o1,o2)->o1[1]-o2[1]);
         // jobs가 요청시간으로 정렬되어 있는 상태기 때문에 여기서는 끝나는 시간으로 정렬
         int cnt =0, idx=0, end=0;
