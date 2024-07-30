@@ -32,7 +32,8 @@
 - 접근방식
 
   [은상]
-  
+  - 삽입, 삭제의 시간복잡도가 크지 않으면서 자동 정렬이 가능하고 중복을 허용하는 `multiset` 선언
+  - Insert 명령어일 경우에 문자열의 2번째 idx부터 마지막 idx까지 추출한 결과를 int type으로 변환 후 multiset에 삽입
   
   [주혜]
   
@@ -40,7 +41,35 @@
 - 피드백
 
   [은상]
-  
+  - 처음에 priority_queue를 사용하는 로직을 생각하다가 포기 → 20분 소요
+    - 생각이 나지 않으면 빠르게 다른 해결 방안을 모색 → Good!
+    - cf. 다른 사람의 풀이를 참고하니 최대힙, 최소힙 2개의 priority_queue를 선언하여 푸는 방법도 존재
+  - multiset 이라는 자료구조의 사용 방법 익히기 → 20분 소요
+    - [`multiset`](https://choiiis.github.io/cpp-stl/basics-of-set-multiset-class/)
+    - 중복 허용
+    - default → 오름차순 정렬
+    - 검색, 삽입, 삭제의 시간복잡도 → O(logn)
+    - `s.size()`
+    - `s.empty()`
+    - `s.find()`
+    - `s.insert()`
+    - `s.erase(it)`
+    - `s.clear()`
+    
+    ```cpp
+    // 최대값 참조
+    cout << *ms.rbegin() << '\n';
+    
+    // 최소값 참조
+    cout << *ms.begin() << '\n';
+    
+    // 최대값 삭제
+    ms.erase(prev(ms.end()));
+    ms.erase(--ms.end());
+    
+    // 최소값 삭제
+    ms.erase(ms.begin());
+    ```
   
   [주혜]
   
