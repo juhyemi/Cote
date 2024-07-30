@@ -1,6 +1,6 @@
 ## 20240801 문제
 
-### 백준 [예](https://www.acmicpc.net/problem/2512)
+### 백준 [예산](https://www.acmicpc.net/problem/2512)
 
 - 접근방식
 
