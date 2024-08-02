@@ -38,3 +38,4 @@ int main() {
 
 // 시간복잡도: O(N)
 // 17:59
+// https://resilient-aura-65d.notion.site/58dd157595604253869b68235ae29068?pvs=4
