@@ -1,6 +1,6 @@
 ## 20240806 문제
 
-### 백준 [바슷한 단어](https://xn--acmicpc-ny1a.net/problem/2607)
+### 백준 [비슷한 단어](https://xn--acmicpc-ny1a.net/problem/2607)
 
 - 접근방식
 
