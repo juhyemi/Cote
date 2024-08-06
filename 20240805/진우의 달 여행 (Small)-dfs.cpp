@@ -42,5 +42,5 @@ int main() {
   cout << answer << '\n';
 }
 
-// 시간복잡도: O(N * M)
+// 시간복잡도: O(3^NM)
 // https://resilient-aura-65d.notion.site/17484-Small-058169fca1af4ecbae89c2c56cc1310b?pvs=4
