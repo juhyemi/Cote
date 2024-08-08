@@ -5,6 +5,22 @@
 - 접근방식
 
   [은상]
+  - 두 단어가 서로 비슷할 조건을 판단
+    - 비교할 두 단어의 길이가 같은 경우
+        - 구성이 같다
+        - 한 문자를 다른 문자로 바꾸면 구성이 같아진다
+    - 비교할 두 단어의 길이가 1 차이 나는 경우
+        - 문자 하나를 추가하면 구성이 같아진다
+  1. 비교할 두 단어의 각 문자(알파벳) 개수를 저장
+  2. 두 단어가 서로 비슷한지 판단
+    - A ~ Z까지 모든 문자의 개수를 비교하며, `개수 차이가 1인 문자의 개수(DifferentCnt)`를 저장
+        - `DifferentCnt = 0` → 구성이 같다
+        - `DifferentCnt = 1` → 문자 하나를 추가하면 구성이 같아진다
+        - `DifferentCnt = 2` → 한 문자를 다른 문자로 바꾸면 구성이 같아진다
+    - 비교할 두 단어의 길이가 같을 때와 하나 차이날 때를 구분하여 판단
+    - 예외 조건(두 단어가 비슷하지 않을 조건) 고려
+        - 단어의 길이가 2 이상 차이 나는 경우
+        - 특정 문자 개수가 2 이상 차이 나는 경우
   
   [주혜] 
   
@@ -12,6 +28,69 @@
 - 피드백
 
   [은상]
+  - 처음에 정렬을 이용해서 풀이를 시도했지만 오답이 발생했고, GPT를 이용하여 이틀 만에 예외 case를 발견 → 이 문제는 꼭 통째로 기억하고 같은 과오를 반복하지 말자!
+    - 정렬 풀이 code
+        
+        ```cpp
+        #include <iostream>
+        #include <vector>
+        #include <algorithm>
+        #include <string>
+        using namespace std;
+        
+        int N;
+        string word, s;
+        int cnt;
+        
+        bool isSimilar(string a, string b) {
+          // 동일하면 true
+          if(a == b) return true;
+          
+          // a를 더 긴 단어로 설정
+          if(a.length() < b.length()) swap(a, b);
+        
+          // 길이가 2 이상 차이나면 false
+          if((a.length() - b.length()) > 1) return false;
+        
+          for(int i=0; i<a.length(); ++i) {
+            if(a[i] == b[i]) continue;
+        
+            // a의 길이와 b의 길이가 같으면 → 두 단어 전부 해당 idx의 원소를 삭제
+            // 다르면 → 긴 단어의 해당 idx 원소만 삭제
+            if(a.length() == b.length()) b.erase(b.begin() + i);
+            a.erase(a.begin() + i);
+            break;
+          }
+        
+          return a == b;
+        }
+        
+        int main() {
+        	ios_base::sync_with_stdio(0);  cin.tie(0);  cout.tie(0);
+        
+          cin >> N;
+          cin >> word;
+          sort(word.begin(), word.end());
+        	for(int i=1; i<N; ++i) {
+            cin >> s;
+            sort(s.begin(), s.end());
+            if(isSimilar(word, s)) cnt++;
+          }
+        
+          cout << cnt << '\n';
+        }
+        ```
+        
+    - 예외 case
+        
+        ```
+        3
+        AAB
+        AAC
+        ABC
+        ```
+        
+  - 문제를 정확히 파악하고 CASE(문자열의 길이가 같은 경우와 다른 경우)를 잘 구분했으면, 답지를 한 번만 참고하여 문제를 해결할 수 있었을 것 → 특히 `구현` 유형은 문제 파악이 너무 중요하다! 항상 문제를 정확히 파악하는 연습 필요!
   
   [주혜]
 
