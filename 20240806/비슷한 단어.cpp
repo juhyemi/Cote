@@ -10,7 +10,7 @@ int baseAlphabetCnt[26], compAlphabetCnt[26]; // 각 문자(알파벳)의 개수
 int answer;
 
 bool isSimillar() {
-  // 단어의 길이가 2 이상 차이나면 false
+  // 단어의 길이가 2 이상 차이 나면 false
   if(abs((int)(base.length() - comp.length())) > 1) return false;
 
   int DifferentCnt = 0; // 개수 차이가 1인 문자의 개수
