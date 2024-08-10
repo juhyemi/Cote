@@ -73,6 +73,26 @@
     - 일치하는 단어를 찾으면 순서(정답) 반환
 
   [주혜]
+  - 시간초과 실패
+  - https://seongho96.tistory.com/50
+  - 이해중,,
+  ```JAVA
+  class Solution {
+
+    static final String MAPPING = "AEIOU";
+    static final int[] RATE_OF_INCREASE = {781, 156, 31, 6, 1};
+
+    public int solution(String word) {
+        int answer = word.length();
+
+        for (int i = 0; i < word.length(); i++) {
+            answer += (RATE_OF_INCREASE[i] * MAPPING.indexOf(word.charAt(i)));
+        }
+
+        return answer;
+    }
+}
+```
 
   
 - 피드백
