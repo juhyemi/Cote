@@ -78,7 +78,7 @@
   - 이해중,,
   ```JAVA
   class Solution {
-
+  
     static final String MAPPING = "AEIOU";
     static final int[] RATE_OF_INCREASE = {781, 156, 31, 6, 1};
 
@@ -90,9 +90,9 @@
         }
 
         return answer;
-    }
-}
-```
+     }
+  }
+  ```
 
   
 - 피드백
