@@ -39,3 +39,4 @@ int solution(string name) {
 }
 
 // cf. https://googleyness.tistory.com/entry/C-프로그래머스-조이스틱
+// https://resilient-aura-65d.notion.site/36268adbb23e4de48e7a1ed7c031e720?pvs=4
