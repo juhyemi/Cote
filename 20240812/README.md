@@ -18,7 +18,7 @@
     → 다양한 문제를 풀면서 C++에서 제공하는 유용한 자료 구조와 함수들에 대한 범위를 늘리자
   
   [주혜]
-  - 빠른 판단과 구현으로 5분컷 -> Good
+  - 빠른 판단과 구현으로 5분 소요 -> Good
 
 ### 프로그래머스 [조이스틱](https://school.programmers.co.kr/learn/courses/30/lessons/42860)
 
