@@ -5,12 +5,86 @@
 - 접근방식
 
   [은상]
+  - 마지막 날부터 살펴보며
+    - 최댓값을 갱신하면 → 주식을 파는 날
+    - 주식을 파는 날 해당 주식을 판매했을 때 이익을 계산
   
   [주혜]
   
 - 피드백
 
   [은상]
+  - 정렬과 최댓값 index를 활용하여 푸는 알고리즘을 작성했지만 오답이 발생했고, 예외 Case를 찾기 위해 GPT와 30분 동안 삽질
+    - 코드
+        
+        ```cpp
+        #include <iostream>
+        #include <vector>
+        #include <algorithm>
+        using namespace std;
+        typedef long long ll;
+        
+        int T, N;
+        vector<int> sorted, v;
+        ll answer;
+        int maxIdx;
+        int cnt;
+        
+        void reset() {
+          sorted.clear();
+          v.clear();
+          answer = 0;
+          maxIdx = 0;
+          cnt = 0;
+        }
+        
+        int main() {
+        	ios_base::sync_with_stdio(0);  cin.tie(0);  cout.tie(0);
+        
+        	cin >> T;
+          while(T--) {
+            cin >> N;
+            for(int i=0; i<N; ++i) {
+              int n;
+              cin >> n;
+              v.push_back(n);
+              sorted.push_back(n);
+            }
+        
+            sort(sorted.begin(), sorted.end(), greater<int>());
+        
+            for(int i=0; i<N; ++i) {
+              if(sorted[maxIdx] <= v[i]) {
+                answer += (ll)(sorted[maxIdx] * cnt);
+                cnt = 0;
+                ++maxIdx;
+                continue;
+              }
+        
+              answer -= (ll)v[i];
+              ++cnt;
+            }
+        
+            cout << answer << '\n';
+            reset();
+          }
+        }
+        ```
+        
+    - 예외 case
+        
+        ```cpp
+        1
+        8
+        1 2 3 4 5 4 3 2
+        
+        // 기대: 10
+        // 출력: 5
+        ```
+        
+        - 주식을 팔지 않고 구매만 하다가 끝나는 경우 오답
+    - 접근 Idea를 구상할 때 예외 Case를 생각하지 못한 건 내 머릿속의 한계인데 어떻게 보완해야 할까? 문제를 많이 풀어보는 수밖에?
+  - `그리디 알고리즘` 유형 3일 연속 광탈 중 → 많이 풀어보자
   
   [주혜]
 
