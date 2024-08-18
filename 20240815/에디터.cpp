@@ -66,3 +66,4 @@ int main() {
 
 // 시간복잡도: O(문자열의 길이 + M)
 // cf. https://velog.io/@jmink002/C1406
+// https://resilient-aura-65d.notion.site/1406-b76a3a065ab047628bda86905ec70262?pvs=4
