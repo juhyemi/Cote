@@ -32,6 +32,9 @@
 - 접근방식
 
   [은상]
+  - `k개의 수를 제거한다 = (n-k)개의 수를 뽑는다` → `(n-k)`번 반복하며 수를 선택
+    - `i`를 `(n-k)`부터 하나씩 줄여가며 `1`까지 반복
+    - `number`의 뒤에서부터 `(n-i)`개의 수를 남겨두고 나머지 수 중 제일 큰 수를 선택
 
   [주혜]
   
@@ -39,5 +42,55 @@
 - 피드백
 
   [은상]
+  - 예외 Case ?
+    
+    ```cpp
+    #include <string>
+    #include <vector>
+    #include <iostream>
+    using namespace std;
+    #define MAX 1000010
+    
+    string answer;
+    int n; // numberLength
+    int idx;
+    
+    string solution(string number, int k) {
+        n = number.length();
+        while(k > 0 && idx < n) {
+            // cout << "현재 숫자: " << number[idx] << '\n';
+            
+            // 맨 앞 숫자랑 비교
+            // 크면 왼쪽으로 가까운 숫자부터 min(idx, k)개 제거
+            if(number[idx] > number[0]) {
+                // cout << "첫 번째 숫자: " << number[0] << '\n';
+                // cout << "number[idx] > number[0]" << '\n';
+                number.erase(number.begin() + idx - min(idx, k), number.begin() + idx);
+                k -= min(idx, k);
+                idx -= min(idx, k);
+                // cout << "결과: " << number << '\n';
+                // cout << "남은 k의 개수: " << k << '\n';
+            }
+            
+            // 오른쪽 숫자랑 비교
+            // 작으면 현재 숫자 제거
+            if(k > 0 && idx + 1 < n && number[idx] < number[idx + 1]) {
+                // cout << "다음 숫자: " << number[idx + 1] << '\n';
+                // cout << "number[idx] < number[idx + 1]" << '\n';
+                number.erase(number.begin() + idx);
+                --k;
+                idx = idx - 1;
+                // cout << "결과: " << number << '\n';
+                // cout << "남은 k의 개수: " << k << '\n';
+            }
+            
+            ++idx;
+        }
+            
+        return number;
+    }
+    ```
+    
+  - 풀이법을 떠올리기는커녕 풀이를 이해하는 데만 한참 걸림 → 이 문제는 풀이 방법까지 그냥 통째로 외웁시다
   
   [주혜]
