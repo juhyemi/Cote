@@ -13,6 +13,10 @@
     - 사전순 출력을 위해 각 `groupPlayer[]` 정렬
   
   [주혜]
+  - 방이 있고, 해당 정원 수가 다 차지 않고 level 범위 안에 들면 입장
+  - 방이 없거나 level 범위 안에 드는 방이 없으면 새로운 방생성과 동시에 입장
+  - 방 정원이 다 차있으면 Started!, 모자르면 Waiting! 입력 후
+  - 방에 있는 플레이어를 name 순으로 정렬 후 StringBuilder에 추가
   
 - 피드백
 
@@ -26,6 +30,8 @@
         → 모든 문제를 처음부터 완벽히 파악하지 못할 수 있지만, 지금처럼 최대한 빠르게 잘못 파악한 부분을 찾아내는 게 중요할 듯
   
   [주혜]
+  - class 생성을 통해 변수 관리 good
+  - 문제 꼼꼼하게 읽어서 Waiting! 조건 설정 good
 
 ### 프로그래머스 [큰 수 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/42883)
 
