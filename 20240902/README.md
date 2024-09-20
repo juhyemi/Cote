@@ -11,6 +11,8 @@
   - 마지막으로 가장 높은 기둥의 높이를 추가
   
   [주혜]
+  - 가장 높은 곳 기준으로 왼, 오 탐색
+  - stack이 비어있으면 넣어주고 stack에 값이 있다면 stack 값과 현재 값 비교 후 현재값과 같거나 크면 (현재 인덱스-stack top 인덱스) * stack top 인덱스를 answer에 더해줌 (왼, 오 두 번 실행)
   
 - 피드백
 
@@ -70,35 +72,7 @@
           for(int i=lastPos; i>=0; --i) {
             if(!pillars[i]) continue;
             if(s.empty()) {
-              s.push(i);
-              continue;
-            }
-        
-            int prevPos = s.top();
-        
-            // 이전 기둥보다 현재 기둥이 높은 경우
-            if(pillars[prevPos] >= pillars[i]) continue;
-            answer += (prevPos - i) * pillars[prevPos];
-            s.pop();
-            s.push(i);
-        
-            // 최고 높이 기둥 등장
-            if(pillars[i] == maxHeight) {
-              lastMaxHeightPos = i;
-              break;
-            }
-          }
-        
-          answer += (lastMaxHeightPos - firstMaxHeightPos + 1) * maxHeight;
-        
-          cout << answer << '\n';
-        }
-        ```
-        
-    - 예외 처리에 트라우마 생긴듯… 무섭다…
-    - 결론은 가장 높은 기둥 중 아무거나 선택해서 풀어도 예외는 자동으로 해결
-  
-  [주혜]
+              s.p의 무궁무진함을 다시한 번 느낌!
   
 
 ### 프로그래머스 [단속카메라](https://school.programmers.co.kr/learn/courses/30/lessons/42884)
