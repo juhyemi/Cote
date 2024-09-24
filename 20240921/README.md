@@ -1,6 +1,6 @@
 ## 20240921 문제
 
-### 프로그래머스 20922 [도둑질](https://school.programmers.co.kr/learn/courses/30/lessons/42897)
+### 프로그래머스 [도둑질](https://school.programmers.co.kr/learn/courses/30/lessons/42897)
 
 - 접근방식
 
