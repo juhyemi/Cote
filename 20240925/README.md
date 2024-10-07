@@ -1,11 +1,15 @@
 ## 20240925 문제
-### 프로그래머스 [볼 모으기](https://www.acmicpc.net/problem/17615)
+
+### 백준 [볼 모으기](https://www.acmicpc.net/problem/17615)
+
 - 접근방식
+- 
   [은상]
 
   [주혜]
   
 - 피드백
+  
   [은상]
  
   [주혜]
