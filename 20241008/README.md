@@ -16,6 +16,56 @@
 
   [은상]
   - 실전에서는 ‘예제는 모두 맞지만 오답이 뜨는 풀이'는 검증할 방법이 없다 → 스트레스 받지 말고 이런 문제도 있구나 하고 넘어가!
+    - 예외 Case?
+    
+    ```cpp
+    #include <iostream>
+    #include <string>
+    using namespace std;
+    
+    string str;
+    int len; // str.length()
+    int s, e;
+    int cnt; // answer
+    int aCntFromBack; // 뒤에 연속으로 존재하는 a의 개수
+    
+    // 뒤에 연속으로 존재하는 모든 a를 앞으로 이동하는 함수
+    void mySort() {
+      for(int i=len-1; i>=0; --i) {
+        if(str[i] == 'b') break;
+        aCntFromBack++;
+      }
+    
+      str = str.substr(0, len - aCntFromBack);
+      for(int i=0; i<aCntFromBack; ++i) {
+        str = 'a' + str;
+      }
+    }
+    
+    int main() {
+    	ios_base::sync_with_stdio(0);  cin.tie(0);  cout.tie(0);
+    
+    	cin >> str;
+      len = str.length();
+      mySort();
+      s = 0;
+      e = len - 1;
+      
+      while(true) {
+        while(str[s] == 'a' && s < len) s++;
+        while(str[e] == 'b' && e > 0) e--;
+        if(s >= e) break;
+        cnt++;
+        s++;
+        e--;
+      }
+    
+      cout << cnt << '\n';
+    }
+    
+    // 시간복잡도: O(len)
+    ```
   - 문자열이 원형으로 이어져 있을 때 index를 쉽게 처리하기 위한 방법 → 문자열을 복사하여 확장
+  
  
   [주혜]
