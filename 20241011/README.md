@@ -1,6 +1,6 @@
 ## 20241011 문제
 
-### 프로그래머스 [아이템줍기](https://school.programmers.co.kr/learn/courses/30/lessons/87694)
+### 프로그래머스 [여행경로](https://school.programmers.co.kr/learn/courses/30/lessons/43164)
 
 - 접근방식
 
