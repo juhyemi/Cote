@@ -56,5 +56,5 @@
   - 전체 단어 탐색시 공백 조건을 달아주지 않아 삽질
   - 첫 시도에 String.join 을 사용하지 않고 for 루프를 사용하여 sb에 저장하였다
   - String 관련 메서드를 더 숙지해보자!
-  - 오늘의 String 관련 메서드 ** String.join : string 배열을 delimiter 을 기준으로 하나의 문자열로 만들 수 있다!
+  - 오늘의 String 관련 메서드 ** String.join : string 배열을 delimiter 을 구분자로 하나의 문자열로 만들 수 있다!
   
