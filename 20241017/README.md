@@ -1,6 +1,6 @@
 ## 20241017 문제
 
-### 프로그래머스 [퍼즐 조각 채우기](https://school.programmers.co.kr/learn/courses/30/lessons/84021)
+### 프로그래머스 [입국심사](https://school.programmers.co.kr/learn/courses/30/lessons/43238)
 
 - 접근방식
 
