@@ -58,6 +58,19 @@
  
   [주혜]
   - 쉬운 문제라고 생각하고 덫에 걸림
+    ```java
+    long answer = 0;
+        Arrays.sort(times);
+        loop:
+        while(n!=0){
+            answer++;
+            for(int i=0; i<times.length; i++){
+                if(answer%times[i]==0) n--;
+                if(n==0) break loop;
+            }
+        }
+        return answer;
+    ```
   - 범위 확인 및 문제 분류 확인 후 이분탐색인 것 확인
   - 문제를 풀 때 신나서 풀지말고 시간 초과가 날 것 같은지부터 확인하자
   
