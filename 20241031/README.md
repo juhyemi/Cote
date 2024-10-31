@@ -1,10 +1,13 @@
 ## 20241031 문제
 
-### 백준 [순위](https://school.programmers.co.kr/learn/courses/30/lessons/49191)
+### 프로그래머스 [순위](https://school.programmers.co.kr/learn/courses/30/lessons/49191)
 
 - 접근방식
 
   [은상]
+  - 플로이드-와샬 알고리즘 사용
+    - 임의의 두 선수 a, b에 대해 [a vs b]의 경기 결과 정보를 저장
+  - 임의의 선수에 대해 경기 결과 정보가 `n-1`개이면 순위를 매길 수 있으므로 정답 count
 
   [주혜]
   - 각 배열별 왼쪽이 이김
@@ -14,6 +17,23 @@
 - 피드백
 
   [은상]
+  - 플로이드-와샬 알고리즘 기억
+    - a가 b를 이기고, b가 c를 이기면, a가 c를 이긴다
+    - 삼중 포문을 사용할 때 주의
+        - 가장 먼저 순회하는 index `i`는 거쳐가는 정점
+        
+        ```cpp
+        for(int i=0; i<n; ++i) {
+        	for(int j=0; j<n; ++j) {
+        		for(int k=0; k<n; ++k) {
+        			if(versus[j][i] && versus[i][k]) versus[j][k] = true;
+        		}
+        	}
+        }
+        ```
+        
+    - 시간복잡도: `O(n^3)`
+  - 이런 문제도 있구나 하고 넘어갑시다
  
   [주혜]
   - 빠른 접근 GOOD~!
