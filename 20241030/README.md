@@ -15,6 +15,9 @@
         - 시간 초과를 방지하기 위해 중간 과정에서 재귀 종료 조건 설정
 
   [주혜]
+  - s, t 중 t를 기준으로 비교
+  - t의 끝이 A면 마지막 문자열 제거
+  - t의 맨 앞이 B면 맨 앞 문자열 제거 후 reverse
   
 - 피드백
 
@@ -26,3 +29,8 @@
   - 하지만 빠르게 시간 초과 해결 방안을 구상 → Good
  
   [주혜]
+  - Stack과 Queue로 구현 -> 시간초과
+  - reverse시 하나씩 뒤집는게 아니라 reverse() 이용
+    ```java
+    new StringBuilder(t.substring(1)).reverse().toString()
+    ```
